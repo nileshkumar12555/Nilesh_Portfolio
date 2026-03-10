@@ -47,16 +47,15 @@ export const profileData = {
     },
     {
       year: "2023",
-      title: "MERN Projects",
-      organization: "Independent Development",
+      title: "React Trainee",
+      organization: "Programming Pathshala",
       summary: "Developed full-stack applications using MongoDB, Express, React, and Node.js.",
       type: "Projects",
       duration: "2023",
-      skills: ["MongoDB", "Express", "React", "Node.js"],
+      skills: [  "React", "Node.js"],
       points: [
-        "Implemented authentication systems and admin dashboards",
         "Designed responsive and modern UI interfaces",
-        "Built dynamic applications with scalable backend services"
+        "Built dynamic applications with scalable Frontend services"
       ]
     },
     {
