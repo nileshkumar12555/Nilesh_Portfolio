@@ -25,9 +25,9 @@ export default function LineChart({ data }) {
   }, [path]);
 
   return (
-    <div className="rounded-2xl border border-subtle bg-surface-alt p-5">
-      <h3 className="text-lg font-bold">Repository Activity</h3>
-      <svg viewBox={`0 0 ${width} ${height}`} className="mt-5 w-full">
+    <div className="rounded-xl border border-subtle bg-surface-alt p-3">
+      <h3 className="text-base font-bold mb-2">Repository Activity</h3>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full">
         <path
           d={path}
           fill="none"

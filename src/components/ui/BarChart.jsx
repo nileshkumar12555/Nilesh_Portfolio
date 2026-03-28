@@ -5,9 +5,9 @@ export default function BarChart({ data }) {
   const maxValue = Math.max(...data.map((item) => item.value), 1);
 
   return (
-    <div className="rounded-2xl border border-subtle bg-surface-alt p-5">
-      <h3 className="text-lg font-bold">Top Languages</h3>
-      <div className="mt-5 space-y-4">
+    <div className="rounded-xl border border-subtle bg-surface-alt p-3">
+      <h3 className="text-base font-bold mb-2">Top Languages</h3>
+      <div className="space-y-2">
         {data.map((item) => (
           <div
             key={item.label}

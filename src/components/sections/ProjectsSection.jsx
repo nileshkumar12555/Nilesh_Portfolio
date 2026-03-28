@@ -69,7 +69,7 @@ export default function ProjectsSection() {
         </label>
       </div>
 
-      <motion.div layout className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <motion.div layout className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         <AnimatePresence>
           {projects.map((project, index) => (
             <motion.article
@@ -79,63 +79,61 @@ export default function ProjectsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 8 }}
               transition={{ delay: index * 0.04 }}
-              className="premium-card group relative overflow-hidden rounded-3xl border border-subtle bg-surface-alt p-4 shadow-soft transition hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-2xl border border-subtle bg-surface-alt p-2 shadow-md transition hover:-translate-y-1 hover:shadow-lg min-h-[320px] flex flex-col"
             >
-              <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(228,87,46,0.15),transparent_42%)] opacity-0 transition duration-300 group-hover:opacity-100" />
-              <div className="overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(228,87,46,0.10),transparent_42%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+              <div className="overflow-hidden rounded-xl">
                 <img
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
                   decoding="async"
-                  className="h-48 w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
+                  className="h-32 w-full rounded-xl object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
 
-              <div className="mt-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">{project.category}</p>
-                <h3 className="mt-2 text-xl font-bold">{project.title}</h3>
-                <p className="mt-2 min-h-14 text-sm text-muted">{project.description}</p>
-
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {project.tech.map((item) => (
-                    <span key={item} className="rounded-full border border-subtle px-2.5 py-1 text-xs font-semibold">
-                      {item}
-                    </span>
-                  ))}
+              <div className="mt-2 flex-1 flex flex-col justify-between">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">{project.category}</p>
+                  <h3 className="mt-1 text-base font-bold leading-tight">{project.title}</h3>
+                  <p className="mt-1 min-h-10 text-xs text-muted">{project.description}</p>
+                  <div className="mt-2 flex flex-wrap gap-1">
+                    {project.tech.map((item) => (
+                      <span key={item} className="rounded-full border border-subtle px-2 py-0.5 text-[10px] font-semibold">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap gap-2">
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
                     data-magnetic="true"
-                    className="rounded-xl border border-subtle px-4 py-2 text-sm font-semibold"
+                    className="rounded-lg border border-subtle px-3 py-1 text-xs font-semibold"
                   >
                     View Details
                   </button>
-
                   {isValidUrl(project.demo) ? (
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
                       data-magnetic="true"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white"
+                      className="inline-flex items-center gap-1 rounded-lg bg-[var(--brand)] px-3 py-1 text-xs font-semibold text-white"
                     >
-                      <FiExternalLink size={14} /> Demo
+                      <FiExternalLink size={12} /> Demo
                     </a>
                   ) : null}
-
                   {isValidUrl(project.source) ? (
                     <a
                       href={project.source}
                       target="_blank"
                       rel="noreferrer"
                       data-magnetic="true"
-                      className="inline-flex items-center gap-2 rounded-xl border border-subtle px-4 py-2 text-sm font-semibold"
+                      className="inline-flex items-center gap-1 rounded-lg border border-subtle px-3 py-1 text-xs font-semibold"
                     >
-                      <FiGithub size={14} /> Code
+                      <FiGithub size={12} /> Code
                     </a>
                   ) : null}
                 </div>
